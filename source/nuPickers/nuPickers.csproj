@@ -275,6 +275,8 @@
     <Compile Include="PropertyEditors\SqlLabels\SqlLabelsPropertyEditor.cs" />
     <Compile Include="PropertyEditors\SqlTypeaheadListPicker\SqlTypeaheadListPickerPreValueEditor.cs" />
     <Compile Include="PropertyEditors\SqlTypeaheadListPicker\SqlTypeaheadListPickerPropertyEditor.cs" />
+    <Compile Include="PropertyEditors\UmbracoTreeTreePicker\UmbracoTreeTreePickerPreValueEditor.cs" />
+    <Compile Include="PropertyEditors\UmbracoTreeTreePicker\UmbracoTreeTreePickerPropertyEditor.cs" />
     <Compile Include="PropertyEditors\XmlLabels\XmlLabelsPreValueEditor.cs" />
     <Compile Include="PropertyEditors\XmlLabels\XmlLabelsPropertyEditor.cs" />
     <Compile Include="PropertyEditors\XmlTypeaheadListPicker\XmlTypeaheadListPickerPreValueEditor.cs" />
@@ -333,6 +335,8 @@
     <Compile Include="Shared\SqlDataSource\SqlDataSource.cs" />
     <Compile Include="Shared\SqlDataSource\SqlDataSourceApiController.cs" />
     <Compile Include="Shared\TypeaheadListPicker\TypeaheadListPicker.cs" />
+    <Compile Include="Shared\UmbracoTreeDataSource\UmbracoTreeDataSource.cs" />
+    <Compile Include="Shared\UmbracoTreeDataSource\UmbracoTreeDataSourceApiController.cs" />
     <Compile Include="Shared\XmlDataSource\XmlDataSource.cs" />
     <Compile Include="Shared\XmlDataSource\XmlDataSourceApiController.cs" />
   </ItemGroup>
@@ -479,10 +483,27 @@
   <ItemGroup>
     <EmbeddedResource Include="Shared\Labels\LabelsConfig.html" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shared\UmbracoTreeDataSource\UmbracoTreeDataSourceConfig.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shared\UmbracoTreeDataSource\UmbracoTreeDataSourceConfigController.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shared\TreePicker\TreePickerConfig.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shared\TreePicker\TreePickerEditor.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shared\TreePicker\TreePickerEditor.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shared\TreePicker\TreePickerEditorController.js" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>
-    </PostBuildEvent>
+    <PostBuildEvent>xcopy $(ProjectDir)bin\debug\uComponents.* F:\dev\wwwroot\7.2.5\bin\ /Y</PostBuildEvent>
   </PropertyGroup>
   <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
