@@ -501,6 +501,10 @@
   <ItemGroup>
     <EmbeddedResource Include="Shared\TreePicker\TreePickerEditorController.js" />
   </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shared\TreePicker\TreePickerEditorDialog.html" />
+    <EmbeddedResource Include="Shared\TreePicker\TreePickerEditorDialogController.js" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>xcopy $(ProjectDir)bin\debug\uComponents.* F:\dev\wwwroot\7.2.5\bin\ /Y</PostBuildEvent>
