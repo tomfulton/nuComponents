@@ -23,6 +23,19 @@ angular.module('umbraco.resources')
                         }
                     });
 
+                },
+
+                getByIds: function(apiController, ids) {
+
+                    // returns [{"id":123,name:"Name"},{"id":456,"label":"456"}...]
+                    return $http({
+                        method: 'POST',
+                        url: 'backoffice/nuPickers/' + apiController + '/GetByIds',
+                        params: {
+                            'ids': ids
+                        },
+                        data: { }
+                    });
                 }
 
             };

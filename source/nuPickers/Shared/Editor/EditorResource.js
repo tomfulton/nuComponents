@@ -13,6 +13,10 @@ angular.module('umbraco.resources')
                     return dataSourceResource.getEditorDataItems(model, typeahead);
                 },
 
+                getByIds: function(apiController, ids) {
+                    return dataSourceResource.getByIds(apiController, ids);
+                },
+
                 getPickedKeys: function (model) {
 
                     // create a new promise....

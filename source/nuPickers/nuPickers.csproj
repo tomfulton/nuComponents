@@ -334,6 +334,8 @@
     <Compile Include="Shared\SaveFormat\SaveFormat.cs" />
     <Compile Include="Shared\SqlDataSource\SqlDataSource.cs" />
     <Compile Include="Shared\SqlDataSource\SqlDataSourceApiController.cs" />
+    <Compile Include="Shared\TreePicker\ITreePickerDataSource.cs" />
+    <Compile Include="Shared\TreePicker\TreePickerTreeNode.cs" />
     <Compile Include="Shared\TypeaheadListPicker\TypeaheadListPicker.cs" />
     <Compile Include="Shared\UmbracoTreeDataSource\UmbracoTreeDataSource.cs" />
     <Compile Include="Shared\UmbracoTreeDataSource\UmbracoTreeDataSourceApiController.cs" />

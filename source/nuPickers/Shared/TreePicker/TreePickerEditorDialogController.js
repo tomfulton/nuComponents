@@ -54,11 +54,13 @@ angular
             };
 
             $scope.multiSubmit = function (result) {
-              var obj = [];
-              _.each(result, function(item) {
-                obj.push({ id: item, name: 'TODO: Lookup Name (' + item + ')', icon: 'icon-folder' });
+              editorResource.getByIds($scope.dialogData.config.dataSource.apiController, result.join(",")).then(function(d) {
+                var obj = [];
+                _.each(d.data, function(item) {
+                  obj.push({ id: item.id, name: item.name, icon: 'icon-folder' });
+                });
+                $scope.submit(obj);
               });
-              $scope.submit(obj);
             };
 
             $scope.dialogTreeEventHandler.bind("treeNodeSelect", nodeSelectHandler);
